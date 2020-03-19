@@ -48,10 +48,7 @@ def GetIPLocation(ip, saved):
         f.write(f"{ip} →  {country}, {region}, {city}, {postal}\n")
         f.close()
 
-    if args.plain:
-        print(f"[+] {ip} →  {country}, {region}, {city}, {postal}")
-    else:
-        print(f"\t\t\t\t[+] {ip} →  {country}, {region}, {city}, {postal}")
+    print(f"[+] {ip} →  {country}, {region}, {city}, {postal}")
 
 
 def show_info(src_ip, saved):
