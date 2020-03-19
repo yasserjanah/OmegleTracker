@@ -16,7 +16,7 @@ def getLocalIP():
 
 my_ip = getLocalIP()
 
-db = ipinfo.getHandler("679d9f5aae47f4")
+db = ipinfo.getHandler("< Go to https://ipinfo.io/signup and get your API Key >")
 
 print("[!] listening on [any] Omegle packet ... coded by y4ss3r_j4n4ah")
 
