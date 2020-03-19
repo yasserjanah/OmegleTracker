@@ -16,7 +16,7 @@ def getLocalIP():
 
 my_ip = getLocalIP()
 
-db = ipinfo.getHandler("<Go to https://ipinfo.io/signup and get your API KEY>")
+db = ipinfo.getHandler("679d9f5aae47f4")
 
 print("[!] listening on [any] Omegle packet ... coded by y4ss3r_j4n4ah")
 
@@ -71,9 +71,8 @@ def pkt_callback(packet):
             if current_ip != previous_ip: # mean that we work with new ip
                 show_info(packet[IP].dst, args.save)
             else:
-                if args.show_all is not None: 
                     show_info(packet[IP].dst, None)
-                else: pass
+
             previous_ip = current_ip
 
 def getArgs():
@@ -89,7 +88,7 @@ def main():
     current_ip = ''
     previous_ip = ''
     args = getArgs()
-    sniff(iface="wlan0", prn=pkt_callback, filter=f"udp and host {my_ip}", store=0)
+    sniff(prn=pkt_callback, filter=f"udp and host {my_ip}", store=0)
 
 try:
     main()
