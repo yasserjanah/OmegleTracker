@@ -3,6 +3,7 @@ from scapy.all import *
 import ipinfo
 import sys
 import socket
+from colorama import Fore
 
 __author__ = "fb.com/yasser.janah"
 
@@ -16,9 +17,9 @@ def getLocalIP():
 
 my_ip = getLocalIP()
 
-db = ipinfo.getHandler("< Go to https://ipinfo.io/signup and get your API Key >")
+db = ipinfo.getHandler("< Go to https://ipinfo.io/signup and get your API Key and paste it here >")
 
-print("[!] listening on [any] Omegle packet ... coded by y4ss3r_j4n4ah")
+print(f"{Fore.BLUE}[*] {Fore.WHITE}Listening on [{Fore.YELLOW}any{Fore.WHITE}] Omegle packet ...")
 
 
 def GetIPLocation(ip, saved):
@@ -48,7 +49,7 @@ def GetIPLocation(ip, saved):
         f.write(f"{ip} →  {country}, {region}, {city}, {postal}\n")
         f.close()
 
-    print(f"[+] {ip} →  {country}, {region}, {city}, {postal}")
+    print(f"\033[G\033[K{Fore.GREEN}[+]{Fore.YELLOW} {ip} {Fore.MAGENTA}→  {Fore.CYAN}{country}, {region}, {city}, {postal}{Fore.RESET}")
 
 
 def show_info(src_ip, saved):
